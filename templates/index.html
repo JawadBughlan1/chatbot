@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Financial Chatbot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        padding: 8px;
+        width: 300px;
+      }
+      button {
+        padding: 8px 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .response {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Financial Chatbot</h2>
+    <form method="POST">
+      <input
+        type="text"
+        name="query"
+        placeholder="e.g. total revenue"
+        required
+      />
+      <button type="submit">Ask</button>
+    </form>
+
+    {% if response %}
+    <div class="response">
+      <h3>You asked: "{{ user_input }}"</h3>
+      <p><strong>Answer:</strong> {{ response }}</p>
+    </div>
+    {% endif %}
+  </body>
+</html>
